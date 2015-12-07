@@ -10,11 +10,7 @@ require('static-words-array.php');
 
 /**
 
-4.	Array Intersect ()
-a.	With Top 100 Static Array
-5.	Cornt State array match
-a.	Total array – array intersect
-6.	Return: 
+
 a.	$top100;
 b.	$total = array cont
 c.	$words
@@ -53,5 +49,15 @@ $releasearray = array explode ( string " " , string $cleanrelease );
 
 // write intersect between two arrays
 
+$result = array_intersect($releasearray, $top50);
+
+// count the arrays
+
+$usedwords = count($result);
+$totalwords = count($releasearray);
+
+$wordusage = ( $usedwords / $totalwords ) * 100;
+
+$wordsused = natcasesort ($result);
 
 ?>
