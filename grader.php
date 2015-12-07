@@ -31,15 +31,10 @@ $roughrelease= htmlspecialchars($rawrelease);
 // kill off punctuation and such
 
 $patterns = array();
-$patterns[0] = "\'";
-$patterns[1] = "\!";
-$patterns[2] = "\(";
-$patterns[3] = "\)";
 $replacements = array();
-$replacements[3] = ' ';
-$replacements[2] = ' ';
-$replacements[1] = ' ';
-$replacements[0] = ' ';
+
+$patterns = array_fill(5, 6, 'banana'); // target punctuation
+$replacements = array_fill(' ', ' '); // must have same number of spaces as there are punctuation targets
 
 $cleanrelease= preg_replace($patterns, $replacements, $roughrelease);
 
@@ -49,7 +44,7 @@ $releasearray = array explode ( string " " , string $cleanrelease );
 
 // write intersect between two arrays
 
-$result = array_intersect($releasearray, $top50);
+$result = array_intersect($releasearray, $top100);
 
 // count the arrays
 
