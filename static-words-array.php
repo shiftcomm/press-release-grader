@@ -5,4 +5,6 @@ Top 100 words list
 Static array
 ****************************************************/
 
+$top50[]="business","innovation";
+
 ?>
