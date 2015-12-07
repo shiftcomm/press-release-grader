@@ -5,6 +5,6 @@ Top 100 words list
 Static array
 ****************************************************/
 
-$top50[]="business","innovation";
+$top100 = array_fill('word','banana','word');
 
 ?>
