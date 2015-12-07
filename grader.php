@@ -3,18 +3,13 @@
 /***************************************************
  * This file is where the logic actually goes
  ***************************************************/
- 
+
+// import our words
+
+require('static-words-array.php');
 
 /**
- * 
- * 1.	Preg – Replace
-a.	Punctuation
-b.	Special characters
-c.	XSS filter
-d.	Move to LC
-2.	Explode ()
-a.	Spaces
-3.	Release_array ()
+
 4.	Array Intersect ()
 a.	With Top 100 Static Array
 5.	Cornt State array match
@@ -29,6 +24,34 @@ a.	X% overused words
 
 **/
 
-$rawrelease = $_POST["textarea"];
+// pull in the release
+
+$rawrelease = $_POST['textarea'];
+
+// sanitize against obvious hacks
+
+$roughrelease= htmlspecialchars($rawrelease);
+
+// kill off punctuation and such
+
+$patterns = array();
+$patterns[0] = "\'";
+$patterns[1] = "\!";
+$patterns[2] = "\(";
+$patterns[3] = "\)";
+$replacements = array();
+$replacements[3] = ' ';
+$replacements[2] = ' ';
+$replacements[1] = ' ';
+$replacements[0] = ' ';
+
+$cleanrelease= preg_replace($patterns, $replacements, $roughrelease);
+
+// explode to an array
+
+$releasearray = array explode ( string " " , string $cleanrelease );
+
+// write intersect between two arrays
+
 
 ?>
