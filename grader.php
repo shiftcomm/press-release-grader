@@ -60,4 +60,29 @@ $wordusage = ( $usedwords / $totalwords ) * 100;
 
 $wordsused = natcasesort ($result);
 
+// iterate through array and turn into nice list
+
+foreach($usedwords as $value) {
+  $wordslist .= "<li>".$value."</li>";
+}
+
 ?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Top Overused Words</p>
+<p>In your press release, you achieved a score of <?=$wordusage; ?>%</p>
+<p>Out of <?=$totalwords; ?> words total, you used <?=$usedwords; ?> 'overused' words.</p>
+<p>The words you used include:</p>
+<ul>
+<?=$wordslist; ?>
+</ul>
+<p>For more information, please click here.</p>
+</body>
+</html>
