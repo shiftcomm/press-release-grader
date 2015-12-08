@@ -33,8 +33,8 @@ $roughrelease= htmlspecialchars($rawrelease);
 $patterns = array();
 $replacements = array();
 
-$patterns = array_fill(5, 6, 'banana'); // target punctuation
-$replacements = array_fill(' ', ' '); // must have same number of spaces as there are punctuation targets
+$patterns = array_fill('/‘', '/’', '/‚', '/“', '/”', '/„', '/†', '/‡', '/‰', '/‹', '/›', '/♠', '/♣', '/♥', '/♦', '/‾', '/←', '/↑', '/→', '/↓', '/™', '/!', '/“', '/#', '/$', '/%', '/&', '/‘', '/(', '/)', '/*', '/+', '/,', '/-', '/.', '//', '/', '/:', '/;', '/<', '/=', '/>', '/?', '/@', '/[', '/\', '/]', '/]', '/_', '/`', '/{', '/|', '/}', '/~', '/–', '/—', '/¡', '/¢', '/£', '/¤', '/¥', '/¦', '/§', '/¨', '/©', '/ª', '/«', '/¬', '/®', '/¯'); // target punctuation
+$replacements = array_fill(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '); // must have same number of spaces as there are punctuation targets
 
 $cleanrelease= preg_replace($patterns, $replacements, $roughrelease);
 
